@@ -1,0 +1,8 @@
+<!doctype html><html><head><title>esp-link</title><link rel=stylesheet href="/pure-min.css"><link rel=stylesheet href="/grids-responsive-min.css"><link rel=stylesheet href="/style.css"><meta name=viewport content="width=device-width, initial-scale=1"><script src="/ui.js"></script></head><body><div id=layout><div id=main><div class=header><div><img src="favicon.ico" height=64><span class=jl>JEELABS</span></div><h1 style="margin-top:0">ESP-CLIENT</h1></div><div class=content><div class=pure-g><div class="pure-u-1 pure-u-md-1-2"><div class=card><h1>System overview</h1><div id=wifi-spinner class="spinner spinner-small"></div><table id=wifi-table class="pure-table pure-table-horizontal" hidden><tbody><tr><td class=popup-target>Hostname</td><td><div class="click-to-edit system-name"><span class=edit-off></span><input class=edit-on maxlength=31 hidden></input><div class=popup>Click to edit!<br>Hostname displayed in menu bar and used by DHCP and mDNS</div></div></td></tr><tr><td>Network SSID</td><td id=wifi-ssid></td></tr><tr><td>WiFi status</td><td id=wifi-status></td></tr><tr><td>WiFi address</td><td id=wifi-ip></td></tr><tr><td>Sensor ID</td><td class=system-sid></td></tr><tr><td>Serial baud</td><td class=system-baud></td></tr></tbody></table></div></div></div></div></div></div><script type="text/javascript">
+onLoad(function() {
+  makeAjaxInput("system", "description");
+  makeAjaxInput("system", "name");
+  getWifiInfo();
+  getSystemInfo();  
+});
+</script></body></html>

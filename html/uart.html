@@ -1,0 +1,75 @@
+  <div id="main">
+    <div class=header>
+      <div><img src="favicon.ico" height=64><span class=jl>JEELABS</span></div>
+      <h1 style="margin-top:0"><span class=esp>esp</span>-link</h1>
+      <h2 id=version></h2>
+    </div>
+    <div class="content">
+      <form action="#" id="uartform" class="pure-form pure-form-aligned">
+        <fieldset>
+          <legend>UART config</legend>
+          <div class="pure-control-group">
+            <label for="uart-baud">Baudrate</label>
+            <select id="uart-baud">
+              <option value="460800">460800</option>
+              <option value="250000">250000</option>
+              <option value="230400">230400</option>
+              <option value="115200">115200</option>
+              <option value="57600">57600</option>
+              <option value="38400">38400</option>
+              <option value="19200">19200</option>
+              <option value="9600">9600</option>
+              <option value="4800">4800</option>
+              <option value="2400">2400</option>
+              <option value="1200">1200</option>
+            </select>
+          </div>
+          <div class="pure-control-group">
+            <label for="uart-databits">Data Bits: </label>
+            <select id="uart-databits">
+              <option value="0">5 bits</option>
+              <option value="1">6 bits</option>
+              <option value="2">7 bits</option>
+              <option value="3">8 bits</option>              
+            </select>
+          </div>
+          <div class="pure-control-group">
+            <label for="uart-parity">Parity: </label>
+            <select id="uart-parity">
+              <option value="2">None</option>
+              <option value="1">Odd</option>
+              <option value="0">Even</option>                     
+            </select>
+          </div>
+          <div class="pure-control-group">
+            <label for="uart-stopbits">Stop Bit: </label>
+            <select id="uart-stopbits">
+              <option value="1">1</option>
+              <option value="2">1.5</option>
+              <option value="3">2</option>                     
+            </select>
+            </div>
+          <button id="uartform-button" type="submit" class="pure-button pure-button-primary">Submit</button>        
+          </fieldset>
+	  </form>      
+      <form action="#" id="sensorform" class="pure-form pure-form-aligned ">
+        <fieldset>
+          <legend>Sensor ID</legend>
+          <input id="sensor-id" type="text">          
+          <button id="sensorform-button" type="submit" class="pure-button pure-button-primary">Save ID</button>        
+          </fieldset>
+	  </form>
+    </div>
+  </div>
+</div>
+<script src="uart.js"></script>
+<script type="text/javascript">
+onLoad(function() {
+  getUartInfo();
+  getSensorInfo();  
+  bnd($("#uartform"), "submit", changeUartconfig);
+  bnd($("#sensorform"), "submit", changeSensorConfig);
+});
+</script>
+</body>
+</html>
